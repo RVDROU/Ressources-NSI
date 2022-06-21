@@ -1,11 +1,6 @@
 import os, re
 import sys
-'''
-titre = re.search('title: (?P<title>\w+)', ''.join(l))
 
-regex = re.compile(r'---(\n|.)*---$', re.MULTILINE)
-regex.search(''.join(l))
-'''
 NB_DOSS = 40
 
 lst = ['{:02d}'.format(k) for k in range(1, NB_DOSS+1)]
@@ -66,12 +61,12 @@ def fichiers_1_2():
 #         """
 
 contenu = """
---8<-- "docs/exercices/{0}/{1}/sujet_formate.md"
+--8<-- "./docs/exercices/{0}/{1}/sujet_formate.md"
 
 """
 ide = """
 ```python
-    --8<-- "docs/exercices/{0}/exo.py"
+    --8<-- "./docs/exercices/{0}/{1}/exo.py"
 ```
 """
 exclude = """
@@ -98,10 +93,12 @@ for root, dirs, lst_files in os.walk('.') :
             regex = re.compile(r"{{ py_sujet.*}}", re.MULTILINE)
             data = regex.sub('', data)
             regex = re.compile(r"{{ IDE.*}}", re.MULTILINE)
-            data = regex.sub(ide.format(root), data)
-                
+            rep = root.split('/')
+            data = regex.sub(ide.format(rep[-2], rep[-1]), data)
+            regex = re.compile(r']\(images/', re.MULTILINE)
+            data = regex.sub(']({0}/images/'.format(rep[-1]), data)  
             with open(os.path.join(root, 'sujet_formate.md'), 'w') as f :
-                f.write("# {0}".format(titre))
+                f.write("\n\n### {0} \n\n".format(titre))
                 f.write(data)
             
                  
