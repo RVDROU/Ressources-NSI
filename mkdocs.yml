@@ -13,10 +13,11 @@ nav:
       - "Règlement des épreuves de terminale" : './annales/reglement.md'
       - 'Annales des épreuves pratiques' : './annales/EP_NSI_2022.md'
     
-    - Exercices pratiques :
-      - "Exercices variés pour s'entrainer à coder" : './exercices_pratiques/exos_variés.md'
-      - 'Exercices pratiques pour le bac' : './exercices_pratiques/type_bac.md'
-    
+    - Exercices variés pour s'entrainer à coder :
+      - "Exercices faciles" : './exercices/1-facile/exos.md'
+      - "Exercices de difficulté moyenne" : './exercices/2-moyen/exos.md'
+      - "Exercices difficiles" : './exercices/3-difficile/exos.md'
+
     - Outils pour la NSI :
       - 'Les logiciels' :  './outils/logiciels.md'
       - 'Aides mémoires' : ./outils/tutos.md
@@ -59,7 +60,6 @@ markdown_extensions:
     - meta
     - abbr
     - md_in_html
-
     - def_list                      # Les listes de définition.
     - attr_list                     # Un peu de CSS et des attributs HTML.
     - footnotes                     # Notes[^1] de bas de page.  [^1]: ma note.
@@ -121,7 +121,7 @@ plugins:
   - search
   - awesome-pages:
         collapse_single_pages: true
-  - macros
+  #- macros
 
 
 
