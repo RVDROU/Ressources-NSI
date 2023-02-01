@@ -11,7 +11,8 @@ nav:
         
     - Annales de NSI :
       - "Règlement des épreuves de terminale" : './annales/reglement.md'
-      - 'Annales des épreuves pratiques' : './annales/EP2022/EP_NSI_2022.md'
+      - 'Annales des épreuves pratiques 2022' : './annales/EP2022/EP_NSI_2022.md'
+      - 'Annales des épreuves pratiques 2023' : './annales/EP2023/EP_NSI_2023.md'
     
     - Exercices variés pour s'entrainer à coder :
       - "Exercices faciles" : './exercices/1-facile/exos.md'
